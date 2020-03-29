@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.infs3605projecttest4.Model.ImportantData;
 import com.example.infs3605projecttest4.Model.TestType;
 
 public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.TypeViewHolder> {
@@ -56,8 +57,8 @@ public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.TypeViewHolder
 
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(currentActivity, PictionaryActivity.class);
-            intent.putExtra("position",getAdapterPosition());
+            Intent intent = new Intent(currentActivity, SelectActivity.class);
+            ImportantData.setCurrExeType(TestType.getTypeList().get(getAdapterPosition()));
             currentActivity.startActivity(intent);
         }
     }

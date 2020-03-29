@@ -12,6 +12,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.infs3605projecttest4.Model.ImportantData;
 import com.example.infs3605projecttest4.Model.TestType;
 import com.example.infs3605projecttest4.Model.Word;
 
@@ -41,19 +42,12 @@ public class PictionaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pictionary);
 
-        // get the position from intent and get the type
-        Intent intent = getIntent();
-        int position = -1;
-        if(intent.getExtras() != null) {
-            position = intent.getExtras().getInt("position");
-        }
-        currType = TestType.getTypeList().get(position);
+        currType = ImportantData.getCurrExeType();
 
         // set the title
         TextView testText = findViewById(R.id.testText);
-        if (position != -1) {
-            testText.setText(currType.getName());
-        }
+
+        testText.setText(currType.getName());
 
         // set the radio button
         rb1 = findViewById(R.id.radioButton1);
@@ -85,6 +79,9 @@ public class PictionaryActivity extends AppCompatActivity {
             setWord();
             // check answer button
             Button pc_bt = findViewById(R.id.pc_bt);
+            // create intent
+            final Intent intent = new Intent(this,SelectActivity.class);
+
             pc_bt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -97,7 +94,8 @@ public class PictionaryActivity extends AppCompatActivity {
                             curr.setChecked(false);
                             curr = null;
                             setWord();
-                        } else {
+                        } else { // End of test
+                            startActivity(intent);
                             Toast.makeText(PictionaryActivity.this, "You have finished!", Toast.LENGTH_SHORT).show();
                         }
                     } else {

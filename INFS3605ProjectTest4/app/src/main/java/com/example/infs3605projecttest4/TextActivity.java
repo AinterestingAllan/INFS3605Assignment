@@ -28,7 +28,7 @@ public class TextActivity extends AppCompatActivity {
     TextView text_word;
     int index=0;
     Word currWord;
-    TestType currType;
+    TestType currType = null;
     int correctPosition;
     ArrayList<Word> currList;
     RadioButton curr = null;

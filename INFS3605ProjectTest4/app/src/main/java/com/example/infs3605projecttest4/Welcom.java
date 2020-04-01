@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -18,13 +21,14 @@ public class Welcom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcom);
 
+
         Button but = findViewById(R.id.wel_entryButton);
         ImageView im = findViewById(R.id.wel_welcomeImage);
-        im.setImageResource(R.drawable.welcome);
 
         final Intent instant = new Intent(this, MainActivity.class);
+        im.setImageResource(R.drawable.welcome);
 
-        Timer timer = new Timer();
+      Timer timer = new Timer();
         TimerTask tast = new TimerTask() {
             @Override
             public void run() {

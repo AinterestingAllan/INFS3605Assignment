@@ -20,8 +20,9 @@
     <TextView
         android:id="@+id/main_text1"
         android:layout_width="250dp"
-        android:layout_height="19dp"
+        android:layout_height="wrap_content"
         android:text="You can select a group to study!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/main_rv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

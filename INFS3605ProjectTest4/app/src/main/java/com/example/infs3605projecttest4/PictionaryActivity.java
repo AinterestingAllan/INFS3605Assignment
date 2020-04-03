@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -35,6 +36,7 @@ public class PictionaryActivity extends AppCompatActivity {
     ImageView pc_image2;
     ImageView pc_image3;
     ImageView pc_image4;
+    private CustomToast toast;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -87,7 +89,8 @@ public class PictionaryActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     // show correct or not
                     if (rbList.get(correctPosition).isChecked()) {
-                        Toast.makeText(PictionaryActivity.this, "correct!", Toast.LENGTH_SHORT).show();
+                        toastMessage("correct!");
+                        //Toast.makeText(PictionaryActivity.this, "correct!", Toast.LENGTH_SHORT).show();
                         // next question
                         currIndex++;
                         if (currIndex < currType.getWordList().size()) {
@@ -96,11 +99,13 @@ public class PictionaryActivity extends AppCompatActivity {
                             setWord();
                         } else { // End of test
                             startActivity(intent);
-                            Toast.makeText(PictionaryActivity.this, "You have finished!", Toast.LENGTH_SHORT).show();
+                            toastMessage("you have finished");
+                            //Toast.makeText(PictionaryActivity.this, "You have finished!", Toast.LENGTH_SHORT).show();
                         }
                     } else {
+                        toastMessage("false(:");
                         // show correct answer
-                        Toast.makeText(PictionaryActivity.this, "false(:", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(PictionaryActivity.this, "false(:", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -205,6 +210,14 @@ public class PictionaryActivity extends AppCompatActivity {
                 setImage(pc_image4);
                 break;
         }
+    }
+    private void toastMessage(String content) {
+        if (toast != null) {
+            toast.hide();
+        }
+        toast = new CustomToast(this,
+                (ViewGroup) this.findViewById(R.id.toast_custom_parent));
+        toast.show(content, 500);
     }
 
 

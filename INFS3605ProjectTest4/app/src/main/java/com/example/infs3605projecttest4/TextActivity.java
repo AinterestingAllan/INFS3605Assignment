@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -33,6 +34,7 @@ public class TextActivity extends AppCompatActivity {
     ArrayList<Word> currList;
     RadioButton curr = null;
     ArrayList<RadioButton> rbList;
+    private CustomToast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +67,8 @@ public class TextActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (rbList.get(correctPosition).isChecked()) {
-                        Toast.makeText(TextActivity.this, "correct!", Toast.LENGTH_SHORT).show();
+                        toastMessage("correct!");
+                        //Toast.makeText(TextActivity.this, "correct!", Toast.LENGTH_SHORT).show();
                         // next question
                         index++;
                         if (index < currType.getWordList().size()) {
@@ -73,11 +76,13 @@ public class TextActivity extends AppCompatActivity {
                             curr = null;
                             setWord();
                         } else { // End of test
-                            Toast.makeText(TextActivity.this, "You have finished!", Toast.LENGTH_SHORT).show();
+                            toastMessage("you have finished!");
+                            //Toast.makeText(TextActivity.this, "You have finished!", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         // show correct answer
-                        Toast.makeText(TextActivity.this, "false(:", Toast.LENGTH_SHORT).show();
+                        toastMessage("false(:");
+                        //Toast.makeText(TextActivity.this, "false(:", Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -154,5 +159,12 @@ public class TextActivity extends AppCompatActivity {
         return ri;
     }
 
-
+    private void toastMessage(String content) {
+        if (toast != null) {
+            toast.hide();
+        }
+        toast = new CustomToast(this,
+                (ViewGroup) this.findViewById(R.id.toast_custom_parent));
+        toast.show(content, 500);
+    }
 }

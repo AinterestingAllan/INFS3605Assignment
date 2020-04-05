@@ -29,8 +29,7 @@ public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.TypeViewHolder
     public TypeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.type_holder,parent
                 ,false);
-        TypeViewHolder myViewHolder = new TypeViewHolder(v);
-        return myViewHolder;
+        return new TypeViewHolder(v);
     }
 
     @Override
@@ -48,7 +47,7 @@ public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.TypeViewHolder
         private ImageView typeImage;
         private TextView typeName;
 
-        public TypeViewHolder(@NonNull View itemView) {
+        TypeViewHolder(@NonNull View itemView) {
             super(itemView);
             typeImage = itemView.findViewById(R.id.type_image);
             typeName = itemView.findViewById(R.id.type_name);

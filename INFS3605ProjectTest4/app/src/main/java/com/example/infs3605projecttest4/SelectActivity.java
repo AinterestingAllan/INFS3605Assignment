@@ -38,6 +38,13 @@ public class SelectActivity extends AppCompatActivity {
             }
         });
 
+        sentenceBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goActivity(SentenceActivity.class);
+            }
+        });
+
     }
 
     private void goActivity(Class x) {

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,8 @@ import com.example.infs3605projecttest4.Model.Word;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 public class PictionaryActivity extends AppCompatActivity {
     RadioButton rb1;
@@ -50,6 +53,7 @@ public class PictionaryActivity extends AppCompatActivity {
         TextView testText = findViewById(R.id.testText);
 
         testText.setText(currType.getName());
+
 
         // set the radio button
         rb1 = findViewById(R.id.radioButton1);

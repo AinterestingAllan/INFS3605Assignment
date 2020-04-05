@@ -35,7 +35,7 @@ public class TextActivity extends AppCompatActivity {
     RadioButton curr = null;
     ArrayList<RadioButton> rbList;
     private CustomToast toast;
-
+    int i = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +59,8 @@ public class TextActivity extends AppCompatActivity {
 
         setRadioButton(rbList);
 
+
+
         if (currList.size()<4) {
             Toast.makeText(this, "Sorry, We don't have enough vocabulary on this category now", Toast.LENGTH_SHORT).show();
         } else {
@@ -68,6 +70,7 @@ public class TextActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     if (rbList.get(correctPosition).isChecked()) {
                         toastMessage("correct!");
+                        i++;
                         //Toast.makeText(TextActivity.this, "correct!", Toast.LENGTH_SHORT).show();
                         // next question
                         index++;
@@ -82,12 +85,14 @@ public class TextActivity extends AppCompatActivity {
                     } else {
                         // show correct answer
                         toastMessage("false(:");
+                        i = 0;
                         //Toast.makeText(TextActivity.this, "false(:", Toast.LENGTH_SHORT).show();
                     }
                 }
 
             });
         }
+
 
     }
 

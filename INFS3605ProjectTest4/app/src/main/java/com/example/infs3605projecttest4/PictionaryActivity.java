@@ -93,7 +93,7 @@ public class PictionaryActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     // show correct or not
                     if (rbList.get(correctPosition).isChecked()) {
-                        toastMessage("correct!");
+                        toastMessage("correct"+" 😊");
                         //Toast.makeText(PictionaryActivity.this, "correct!", Toast.LENGTH_SHORT).show();
                         // next question
                         currIndex++;
@@ -103,11 +103,11 @@ public class PictionaryActivity extends AppCompatActivity {
                             setWord();
                         } else { // End of test
                             startActivity(intent);
-                            toastMessage("you have finished");
+                            toastMessage("you have finished"+" 😃");
                             //Toast.makeText(PictionaryActivity.this, "You have finished!", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        toastMessage("false(:");
+                        toastMessage("false"+" 🙁");
                         // show correct answer
                        // Toast.makeText(PictionaryActivity.this, "false(:", Toast.LENGTH_SHORT).show();
                     }

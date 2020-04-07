@@ -67,7 +67,7 @@ public class TextActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (rbList.get(correctPosition).isChecked()) {
-                        toastMessage("correct!");
+                        toastMessage("correct"+" 😊");
                         //Toast.makeText(TextActivity.this, "correct!", Toast.LENGTH_SHORT).show();
                         // next question
                         index++;
@@ -76,12 +76,12 @@ public class TextActivity extends AppCompatActivity {
                             curr = null;
                             setWord();
                         } else { // End of test
-                            toastMessage("you have finished!");
+                            toastMessage("you have finished"+" 😃");
                             //Toast.makeText(TextActivity.this, "You have finished!", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         // show correct answer
-                        toastMessage("false(:");
+                        toastMessage("false"+" 🙁");
                         //Toast.makeText(TextActivity.this, "false(:", Toast.LENGTH_SHORT).show();
                     }
                 }

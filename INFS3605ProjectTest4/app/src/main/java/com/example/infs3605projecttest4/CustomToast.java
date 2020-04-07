@@ -44,7 +44,7 @@ public class CustomToast {
      *                 如果匹配，永久显示，直到调用hide()
      */
     public void show(String text, int duration) {
-        time = new TimeCount(duration, 3000);
+        time = new TimeCount(duration, 5000);
         toast_content.setText(text);
         if (canceled) {
             time.start();
@@ -72,7 +72,7 @@ public class CustomToast {
             public void run() {
                 showUntilCancel();
             }
-        }, 5000);
+        }, 20000);
     }
 
     /**

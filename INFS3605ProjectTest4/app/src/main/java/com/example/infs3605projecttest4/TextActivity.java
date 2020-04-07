@@ -59,8 +59,6 @@ public class TextActivity extends AppCompatActivity {
 
         setRadioButton(rbList);
 
-
-
         if (currList.size()<4) {
             Toast.makeText(this, "Sorry, We don't have enough vocabulary on this category now", Toast.LENGTH_SHORT).show();
         } else {
@@ -90,7 +88,6 @@ public class TextActivity extends AppCompatActivity {
 
             });
         }
-
 
     }
 

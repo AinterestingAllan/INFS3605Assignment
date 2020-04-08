@@ -12,8 +12,9 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+
         android:id="@+id/navigation_guide"
-        android:name="com.example.infs3605projecttest4.ui.dashboard.DashboardFragment"
+        android:name="com.example.infs3605projecttest4.ui.guide.GuideFragment"
         android:label="@string/title_guide"
         tools:layout="@layout/fragment_guide" />
 

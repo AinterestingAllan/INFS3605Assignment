@@ -28,7 +28,7 @@ public class Welcom extends AppCompatActivity {
         final Intent instant = new Intent(this, MainActivity.class);
         im.setImageResource(R.drawable.welcome);
 
-      Timer timer = new Timer();
+        Timer timer = new Timer();
         TimerTask tast = new TimerTask() {
             @Override
             public void run() {

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +35,7 @@ public class SentenceActivity extends AppCompatActivity {
 
     static SentenceAdapter seAd1;
     static SentenceAdapter seAd2;
-
+    private CustomToast toast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,16 +57,19 @@ public class SentenceActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(SentenceAdapter.selectWordAy.toString().equals(currSentence.getWordsList().toString())) {
-                    Toast.makeText(SentenceActivity.this, "Correct!", Toast.LENGTH_SHORT).show();
+                    toastMessage("correct"+" 😊");
+                    //Toast.makeText(SentenceActivity.this, "Correct!", Toast.LENGTH_SHORT).show();
                     if (currIndex < currType.getSentences().size()-1) {
                         currIndex++;
                         setExe();
                     } else {
-                        Toast.makeText(SentenceActivity.this, "You have finished!", Toast.LENGTH_SHORT).show();
+                        toastMessage("you have finished"+" 😃");
+                        //Toast.makeText(SentenceActivity.this, "You have finished!", Toast.LENGTH_SHORT).show();
                     }
 
                 } else {
-                    Toast.makeText(SentenceActivity.this, "False :(", Toast.LENGTH_SHORT).show();
+                    toastMessage("false"+" 🙁");
+                    //Toast.makeText(SentenceActivity.this, "False :(", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -96,5 +100,12 @@ public class SentenceActivity extends AppCompatActivity {
 
     }
 
-
+    private void toastMessage(String content) {
+        if (toast != null) {
+            toast.hide();
+        }
+        toast = new CustomToast(this,
+                (ViewGroup) this.findViewById(R.id.toast_custom_parent));
+        toast.show(content, 500);
+    }
 }

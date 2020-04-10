@@ -111,7 +111,7 @@ public class TextActivity extends AppCompatActivity {
     void setWord() {
         currWord = currList.get(index);
         // set English
-        text_word.setText(currWord.getEnglish());
+        text_word.setText("How do you say '"+currWord.getEnglish()+"'?");
         //
         int r2 = getRandomIndex();
         int r3 = getRandomIndex();

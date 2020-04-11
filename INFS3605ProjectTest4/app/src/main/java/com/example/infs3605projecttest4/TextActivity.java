@@ -134,7 +134,6 @@ public class TextActivity extends AppCompatActivity {
             currWord = currGroup.get(index).getWord2();
             text_word.setText(currGroup.get(index).getWord1().getLocal()+"  ______");
         }
-
         int r2 = getRandomIndex();
         int r3 = getRandomIndex();
         while (true) {

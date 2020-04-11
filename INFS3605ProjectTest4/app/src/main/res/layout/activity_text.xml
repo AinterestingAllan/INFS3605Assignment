@@ -25,34 +25,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.14" />
+        app:layout_constraintVertical_bias="0.166" />
 
     <RadioButton
         android:id="@+id/text_rb1"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:background="@drawable/radiobutton_background"
+        android:background="@drawable/radiobutton_background_textchoose"
         android:button="@null"
         android:gravity="center"
         android:text="RadioButton"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.316" />
+        app:layout_constraintVertical_bias="0.304" />
 
     <RadioButton
         android:id="@+id/text_rb2"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:background="@drawable/radiobutton_background"
+        android:background="@drawable/radiobutton_background_textchoose"
         android:button="@null"
         android:gravity="center"
         android:text="RadioButton"
@@ -68,32 +68,32 @@
         android:id="@+id/text_rb3"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:background="@drawable/radiobutton_background"
+        android:background="@drawable/radiobutton_background_textchoose"
         android:button="@null"
         android:gravity="center"
         android:text="RadioButton"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.538" />
+        app:layout_constraintVertical_bias="0.56" />
 
     <RadioButton
         android:id="@+id/text_rb4"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:background="@drawable/radiobutton_background"
+        android:background="@drawable/radiobutton_background_textchoose"
         android:button="@null"
         android:gravity="center"
         android:text="RadioButton"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.646" />
+        app:layout_constraintVertical_bias="0.692" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

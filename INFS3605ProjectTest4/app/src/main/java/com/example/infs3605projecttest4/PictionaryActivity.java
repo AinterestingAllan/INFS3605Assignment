@@ -168,7 +168,7 @@ public class PictionaryActivity extends AppCompatActivity {
         // set the word
         TextView pc_word = findViewById(R.id.pc_word);
         currWord = currType.getWordList().get(currIndex);
-        pc_word.setText(currWord.getLocal());
+        pc_word.setText("Which of these is '"+currWord.getLocal()+"'?");
 
         // get random number of word in this dict, the correct is currIndex
         // 0-(size-1)

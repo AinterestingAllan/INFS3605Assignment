@@ -1,4 +1,4 @@
-package com.example.infs3605projecttest4;
+package com.example.infs3605projecttest4.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.infs3605projecttest4.Model.ImportantData;
+import com.example.infs3605projecttest4.R;
 
 public class SelectActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.infs3605projecttest4;
+package com.example.infs3605projecttest4.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -11,10 +11,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.infs3605projecttest4.CustomToast;
 import com.example.infs3605projecttest4.Model.ImportantData;
 import com.example.infs3605projecttest4.Model.Sentence;
 import com.example.infs3605projecttest4.Model.TestType;
 import com.example.infs3605projecttest4.Model.Word;
+import com.example.infs3605projecttest4.R;
+import com.example.infs3605projecttest4.SentenceAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,8 +36,8 @@ public class SentenceActivity extends AppCompatActivity {
     private TestType currType;
     private Sentence currSentence;
 
-    static SentenceAdapter seAd1;
-    static SentenceAdapter seAd2;
+    public static SentenceAdapter seAd1;
+    public static SentenceAdapter seAd2;
     private CustomToast toast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

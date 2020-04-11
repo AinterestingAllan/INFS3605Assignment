@@ -1,4 +1,4 @@
-package com.example.infs3605projecttest4;
+package com.example.infs3605projecttest4.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,10 +11,12 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.infs3605projecttest4.CustomToast;
 import com.example.infs3605projecttest4.Model.ImportantData;
 import com.example.infs3605projecttest4.Model.TestType;
 import com.example.infs3605projecttest4.Model.Word;
 import com.example.infs3605projecttest4.Model.WordGroup;
+import com.example.infs3605projecttest4.R;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -23,7 +25,7 @@ import java.util.Stack;
 
 public class TextActivity extends AppCompatActivity {
     // select or missing
-    static String TAG;
+    public static String TAG;
 
     Button bt;
     RadioButton text1;

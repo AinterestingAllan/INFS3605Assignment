@@ -1,10 +1,9 @@
-package com.example.infs3605projecttest4;
+package com.example.infs3605projecttest4.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +11,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.infs3605projecttest4.CustomToast;
 import com.example.infs3605projecttest4.Model.ImportantData;
 import com.example.infs3605projecttest4.Model.TestType;
 import com.example.infs3605projecttest4.Model.Word;
+import com.example.infs3605projecttest4.R;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-
-import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 public class PictionaryActivity extends AppCompatActivity {
     RadioButton rb1;
@@ -86,7 +84,7 @@ public class PictionaryActivity extends AppCompatActivity {
             // check answer button
             Button pc_bt = findViewById(R.id.pc_bt);
             // create intent
-            final Intent intent = new Intent(this,SelectActivity.class);
+            final Intent intent = new Intent(this, SelectActivity.class);
 
             pc_bt.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -1,7 +1,8 @@
-package com.example.infs3605projecttest4;
+package com.example.infs3605projecttest4.activity;
 
 import android.os.Bundle;
 
+import com.example.infs3605projecttest4.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;

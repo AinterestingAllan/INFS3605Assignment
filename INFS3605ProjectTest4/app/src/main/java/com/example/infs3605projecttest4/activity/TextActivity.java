@@ -1,7 +1,8 @@
-package com.example.infs3605projecttest4;
+package com.example.infs3605projecttest4.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +11,12 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.infs3605projecttest4.CustomToast;
 import com.example.infs3605projecttest4.Model.ImportantData;
 import com.example.infs3605projecttest4.Model.TestType;
 import com.example.infs3605projecttest4.Model.Word;
+import com.example.infs3605projecttest4.Model.WordGroup;
+import com.example.infs3605projecttest4.R;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -20,6 +24,8 @@ import java.util.Set;
 import java.util.Stack;
 
 public class TextActivity extends AppCompatActivity {
+    // select or missing
+    public static String TAG;
 
     Button bt;
     RadioButton text1;
@@ -32,6 +38,7 @@ public class TextActivity extends AppCompatActivity {
     TestType currType = null;
     int correctPosition;
     ArrayList<Word> currList;
+    ArrayList<WordGroup> currGroup;
     RadioButton curr = null;
     ArrayList<RadioButton> rbList;
     private CustomToast toast;
@@ -49,7 +56,18 @@ public class TextActivity extends AppCompatActivity {
         text_word = findViewById(R.id.text_word);
 
         currType = ImportantData.getCurrExeType();
+
         currList = currType.getWordList();
+
+        int currSize = 0;
+        // if user use the missing word function
+        if ("group".equals(TAG)) {
+            currGroup = currType.getWordGroupList();
+            currSize = currType.getWordGroupList().size();
+        } else {
+            currSize = currType.getWordList().size();
+        }
+
 
         rbList = new ArrayList<>();
         rbList.add(text1);
@@ -63,6 +81,7 @@ public class TextActivity extends AppCompatActivity {
             Toast.makeText(this, "Sorry, We don't have enough vocabulary on this category now", Toast.LENGTH_SHORT).show();
         } else {
             setWord();
+            final int finalCurrSize = currSize;
             bt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -71,7 +90,7 @@ public class TextActivity extends AppCompatActivity {
                         //Toast.makeText(TextActivity.this, "correct!", Toast.LENGTH_SHORT).show();
                         // next question
                         index++;
-                        if (index < currType.getWordList().size()) {
+                        if (index < finalCurrSize) {
                             curr.setChecked(false);
                             curr = null;
                             setWord();
@@ -108,11 +127,15 @@ public class TextActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     void setWord() {
-        currWord = currList.get(index);
-        // set English
-        text_word.setText("How do you say '"+currWord.getEnglish()+"'?");
-        //
+        if ("text".equals(TAG)) {
+            currWord = currList.get(index);
+            text_word.setText(currWord.getEnglish());
+        } else {
+            currWord = currGroup.get(index).getWord2();
+            text_word.setText(currGroup.get(index).getWord1().getLocal()+"  ______");
+        }
         int r2 = getRandomIndex();
         int r3 = getRandomIndex();
         while (true) {

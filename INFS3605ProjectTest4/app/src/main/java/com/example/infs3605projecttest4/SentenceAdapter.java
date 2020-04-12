@@ -1,7 +1,6 @@
 package com.example.infs3605projecttest4;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.infs3605projecttest4.Model.Sentence;
 import com.example.infs3605projecttest4.Model.Word;
+import com.example.infs3605projecttest4.activity.SentenceActivity;
 
 import java.util.ArrayList;
 
@@ -23,7 +22,7 @@ public class SentenceAdapter extends RecyclerView.Adapter<SentenceAdapter.MyView
     private String TAG = "";
 
 
-    void setCurrActivity(SentenceActivity currActivity) {
+    public void setCurrActivity(SentenceActivity currActivity) {
         this.currActivity = currActivity;
     }
 

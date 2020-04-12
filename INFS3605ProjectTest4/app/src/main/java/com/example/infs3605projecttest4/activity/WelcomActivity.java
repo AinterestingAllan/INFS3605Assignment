@@ -1,21 +1,24 @@
-package com.example.infs3605projecttest4;
+package com.example.infs3605projecttest4.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+
+import com.example.infs3605projecttest4.R;
+import com.example.infs3605projecttest4.activity.MainActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Welcom extends AppCompatActivity {
+public class WelcomActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

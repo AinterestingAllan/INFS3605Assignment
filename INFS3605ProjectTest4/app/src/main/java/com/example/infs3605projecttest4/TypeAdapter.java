@@ -10,11 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.infs3605projecttest4.Model.ImportantData;
 import com.example.infs3605projecttest4.Model.TestType;
+import com.example.infs3605projecttest4.activity.SelectActivity;
 
 public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.TypeViewHolder> {
 

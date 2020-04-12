@@ -85,7 +85,7 @@ public class SentenceActivity extends AppCompatActivity {
 
         // set the textview
         se_typename.setText(currType.getName());
-        se_wordname.setText(currSentence.getEnglish());
+        se_wordname.setText("Translate this sentence"+"\n \n    "+currSentence.getEnglish());
 
         // set the recyclerview
         se_serv.setLayoutManager(new GridLayoutManager(this,5));

@@ -131,10 +131,10 @@ public class TextActivity extends AppCompatActivity {
     void setWord() {
         if ("text".equals(TAG)) {
             currWord = currList.get(index);
-            text_word.setText(currWord.getEnglish());
+            text_word.setText("How do you say '"+currWord.getEnglish()+"'?");
         } else {
             currWord = currGroup.get(index).getWord2();
-            text_word.setText(currGroup.get(index).getWord1().getLocal()+"  ______");
+            text_word.setText("Fill the missing word \n \n     "+currGroup.get(index).getWord1().getLocal()+"  ______");
         }
         int r2 = getRandomIndex();
         int r3 = getRandomIndex();

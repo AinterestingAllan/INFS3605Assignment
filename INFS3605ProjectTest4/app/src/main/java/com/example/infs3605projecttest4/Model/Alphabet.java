@@ -1,24 +1,34 @@
 package com.example.infs3605projecttest4.Model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.ArrayList;
 
+@Entity
 public class Alphabet {
-    private static ArrayList<Alphabet> alphabets = new ArrayList<>();
-
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String letter;
     private String rule;
     private String englishExample;
     private String noongarExample;
 
-    public Alphabet(int id, String letter, String rule, String englishExample, String noongarExample) {
-        this.id = id;
+    public Alphabet(String letter, String rule, String englishExample, String noongarExample) {
         this.letter = letter;
         this.rule = rule;
         this.englishExample = englishExample;
         this.noongarExample = noongarExample;
     }
 
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getLetter() {
         return letter;
@@ -52,18 +62,5 @@ public class Alphabet {
         this.noongarExample = noongarExample;
     }
 
-    public static ArrayList<Alphabet> getAlphabets() {
-        return alphabets;
-    }
 
-    public static void setAlphabets(ArrayList<Alphabet> alphabets) {
-        Alphabet.alphabets = alphabets;
-    }
-
-    static {
-        alphabets.add(new Alphabet(1,"a","a is always as in father\naa as in Kaat"
-                ,"father","tjak/kaat/maat"));
-        alphabets.add(new Alphabet(2,"b/p","b and p are interchangeable"
-                ,"-","balyat/palyat"));
-    }
 }

@@ -8,6 +8,7 @@ public class Sentence {
     private ArrayList<Word> wordsList;
     private String english;
 
+
     public Sentence(int id, ArrayList<Word> wordsList, String english) {
         this.id = id;
         this.wordsList = wordsList;

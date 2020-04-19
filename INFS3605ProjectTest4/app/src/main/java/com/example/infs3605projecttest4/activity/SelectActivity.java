@@ -15,6 +15,7 @@ public class SelectActivity extends AppCompatActivity {
     Button textBt;
     Button sentenceBt;
     Button missingBt;
+    Button pairsBt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class SelectActivity extends AppCompatActivity {
         textBt = findViewById(R.id.select_text);
         sentenceBt = findViewById(R.id.select_sentence);
         missingBt = findViewById(R.id.select_missing);
+        pairsBt = findViewById(R.id.select_pairs);
 
         pictionaryBt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +55,13 @@ public class SelectActivity extends AppCompatActivity {
             public void onClick(View v) {
                 TextActivity.TAG = "group";
                 goActivity(TextActivity.class);
+            }
+        });
+
+        pairsBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goActivity(PairsActivity.class);
             }
         });
 

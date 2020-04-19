@@ -12,13 +12,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.infs3605projecttest4.Model.ImportantData;
+import com.example.infs3605projecttest4.database.ImportantData;
 import com.example.infs3605projecttest4.Model.TestType;
 import com.example.infs3605projecttest4.activity.SelectActivity;
+import com.example.infs3605projecttest4.database.Warehouse;
+
+import java.util.ArrayList;
 
 public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.TypeViewHolder> {
 
     private Context currentActivity;
+    private ArrayList<TestType> data = new ArrayList<>(Warehouse.getTypesMap().values());
 
     public TypeAdapter(Context currentActivity) {
         this.currentActivity = currentActivity;
@@ -34,12 +38,13 @@ public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.TypeViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull TypeViewHolder holder, int position) {
-        holder.typeName.setText(TestType.getTypeList().get(position).getName());
+        holder.typeName.setText(data.get(position).getName());
+        // holder.typeName.setText(TestType.getTypeList().get(position).getName());
     }
 
     @Override
     public int getItemCount() {
-        return TestType.getTypeList().size();
+        return data.size();
     }
 
     public class TypeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -57,7 +62,8 @@ public class TypeAdapter extends RecyclerView.Adapter<TypeAdapter.TypeViewHolder
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(currentActivity, SelectActivity.class);
-            ImportantData.setCurrExeType(TestType.getTypeList().get(getAdapterPosition()));
+            ImportantData.setCurrExeType(Warehouse.getTypesMap().get(typeName.getText()));
+            // ImportantData.setCurrExeType(TestType.getTypeList().get(getAdapterPosition()));
             currentActivity.startActivity(intent);
         }
     }

@@ -13,7 +13,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.infs3605projecttest4.CustomToast;
-import com.example.infs3605projecttest4.Model.ImportantData;
+import com.example.infs3605projecttest4.database.ImportantData;
 import com.example.infs3605projecttest4.Model.TestType;
 import com.example.infs3605projecttest4.Model.Word;
 import com.example.infs3605projecttest4.R;

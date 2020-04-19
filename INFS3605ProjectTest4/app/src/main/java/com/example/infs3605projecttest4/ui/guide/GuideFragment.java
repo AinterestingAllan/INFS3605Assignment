@@ -30,7 +30,6 @@ public class GuideFragment extends Fragment {
         guide_rv = root.findViewById(R.id.guide_rv);
         guide_rv.setLayoutManager(new LinearLayoutManager(currActivity, LinearLayoutManager.HORIZONTAL
                 , false));
-
         GuideAdapter ad = new GuideAdapter();
         guide_rv.setAdapter(ad);
 

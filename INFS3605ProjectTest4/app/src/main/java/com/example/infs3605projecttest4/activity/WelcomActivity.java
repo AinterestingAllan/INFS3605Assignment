@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 
 import com.example.infs3605projecttest4.R;
-import com.example.infs3605projecttest4.activity.MainActivity;
+import com.example.infs3605projecttest4.database.Warehouse;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -46,6 +46,17 @@ public class WelcomActivity extends AppCompatActivity {
                 startActivity(instant);
             }
         });
+
+        // create the database connection
+        Warehouse.startDatabase(this);
+
+        // insert the alphabets into database
+        // Warehouse.insertAllDataIntoDatabase();
+
+        // get data from database
+        Warehouse.setAllData();
+
+
 
     }
 }

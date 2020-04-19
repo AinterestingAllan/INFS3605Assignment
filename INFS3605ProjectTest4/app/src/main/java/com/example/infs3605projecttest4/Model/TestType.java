@@ -32,55 +32,22 @@ public class TestType {
 
     private static ArrayList<TestType> typeList = new ArrayList<>();
 
-    static {
-        // types
-        typeList.add(new TestType("Family"));
-        typeList.add(new TestType("XXXX2"));
-        typeList.add(new TestType("XXXX3"));
-        typeList.add(new TestType("XXXX4"));
-
-        // type's wordlist
-        typeList.get(0).wordList.add(new Word("Boy", R.drawable.boy,"Nop"));
-        typeList.get(0).wordList.add(new Word("Girl", R.drawable.girl,"Koort"));
-        typeList.get(0).wordList.add(new Word("Man", R.drawable.man,"Noongar"));
-        typeList.get(0).wordList.add(new Word("Woman", R.drawable.woman,"Yoka"));
-
-        // type's sentencelist
-        ArrayList<Word> s1 = new ArrayList<>();
-        ArrayList<Word> s2 = new ArrayList<>();
-        ArrayList<Word> s3 = new ArrayList<>();
-        ArrayList<Word> s4 = new ArrayList<>();
-        s1.add(new Word("Boy1", R.drawable.boy,"NopA"));
-        s1.add(new Word("Boy1", R.drawable.boy,"NopB"));
-        s1.add(new Word("Boy1", R.drawable.boy,"NopC"));
-        s2.add(new Word("Boy2", R.drawable.boy,"NopC"));
-        s2.add(new Word("Boy2", R.drawable.boy,"NopB"));
-        s2.add(new Word("Boy2", R.drawable.boy,"NopA"));
-        s3.add(new Word("Boy3", R.drawable.boy,"NopA"));
-        s3.add(new Word("Boy3", R.drawable.boy,"NopC"));
-        s3.add(new Word("Boy3", R.drawable.boy,"NopB"));
-        s4.add(new Word("Boy4", R.drawable.boy,"NopB"));
-        s4.add(new Word("Boy4", R.drawable.boy,"NopA"));
-        s4.add(new Word("Boy4", R.drawable.boy,"NopC"));
-        typeList.get(0).sentences.add(new Sentence(1, s1,"A B C"));
-        typeList.get(0).sentences.add(new Sentence(1, s2,"C B A"));
-        typeList.get(0).sentences.add(new Sentence(1, s3,"A C B"));
-        typeList.get(0).sentences.add(new Sentence(1, s4,"B A C"));
-
-
-        // type's wordgrouplist
-        WordGroup wordGroup0 = new WordGroup(new Word("xxxx", R.drawable.boy,"WordA")
-                ,new Word("xxxx", R.drawable.boy,"WordB"));
-        WordGroup wordGroup1 = new WordGroup(new Word("xxxx", R.drawable.boy,"HahaA")
-                ,new Word("xxxx", R.drawable.boy,"HahaB"));
-        WordGroup wordGroup2 = new WordGroup(new Word("xxxx", R.drawable.boy,"ExampleA")
-                ,new Word("xxxx", R.drawable.boy,"ExampleB"));
-        typeList.get(0).wordGroupList.add(wordGroup0);
-        typeList.get(0).wordGroupList.add(wordGroup1);
-        typeList.get(0).wordGroupList.add(wordGroup2);
-
-
-    }
+//    static {
+//        // types
+//        typeList.add(new TestType("Family"));
+//        typeList.add(new TestType("XXXX2"));
+//        typeList.add(new TestType("XXXX3"));
+//        typeList.add(new TestType("XXXX4"));
+//
+//        // type's wordlist
+//        typeList.get(0).wordList.add(new Word("Boy", R.drawable.boy,"Nop"));
+//        typeList.get(0).wordList.add(new Word("Girl", R.drawable.girl,"Koort"));
+//        typeList.get(0).wordList.add(new Word("Man", R.drawable.man,"Noongar"));
+//        typeList.get(0).wordList.add(new Word("Woman", R.drawable.woman,"Yoka"));
+//
+//
+//
+//    }
 
     public static ArrayList<TestType> getTypeList() {
         return typeList;

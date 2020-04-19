@@ -9,11 +9,13 @@
         android:roundIcon="@drawable/noongar"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.PairsActivity"></activity>
         <activity android:name=".activity.SentenceActivity" />
         <activity android:name=".activity.TextActivity" />
         <activity android:name=".activity.SelectActivity" />
         <activity android:name=".activity.PictionaryActivity" />
-        <activity android:name=".activity.WelcomActivity"
+        <activity
+            android:name=".activity.WelcomActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

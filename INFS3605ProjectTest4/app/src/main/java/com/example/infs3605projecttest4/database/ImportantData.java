@@ -1,4 +1,6 @@
-package com.example.infs3605projecttest4.Model;
+package com.example.infs3605projecttest4.database;
+
+import com.example.infs3605projecttest4.Model.TestType;
 
 public class ImportantData {
     private static TestType currExeType = null;

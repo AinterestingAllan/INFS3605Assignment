@@ -9,10 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.infs3605projecttest4.CustomToast;
-import com.example.infs3605projecttest4.Model.ImportantData;
+import com.example.infs3605projecttest4.database.ImportantData;
 import com.example.infs3605projecttest4.Model.Sentence;
 import com.example.infs3605projecttest4.Model.TestType;
 import com.example.infs3605projecttest4.Model.Word;
@@ -21,8 +20,6 @@ import com.example.infs3605projecttest4.SentenceAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class SentenceActivity extends AppCompatActivity {
 

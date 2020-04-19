@@ -37,7 +37,7 @@ public class Warehouse {
                         ,"-","balyat/palyat"));
 
                 // insert the words into database
-                insertllWords();
+                insertAllWords();
 
                 // insert the wordgroups into database
                 db.wordGroupDao().insertWordGroup(new WordGroup(900,901,"family"));
@@ -128,7 +128,7 @@ public class Warehouse {
         return typesMap;
     }
 
-    public static void insertllWords() {
+    public static void insertAllWords() {
         db.wordDao().insertWord(new Word(1,"Boy", R.drawable.boy,"Nop","family"));
         db.wordDao().insertWord(new Word(2,"Girl", R.drawable.girl,"Koort","family"));
         db.wordDao().insertWord(new Word(3,"Man", R.drawable.man,"Noongar","family"));

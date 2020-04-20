@@ -50,8 +50,11 @@ public class WelcomActivity extends AppCompatActivity {
         //create the database connection
         Warehouse.startDatabase(this);
 
+
        // insert the alphabets into database
-        Warehouse.insertAllDataIntoDatabase();
+       // Warehouse.insertAllDataIntoDatabase();
+
+
 
         // get data from database
         Warehouse.setAllData();

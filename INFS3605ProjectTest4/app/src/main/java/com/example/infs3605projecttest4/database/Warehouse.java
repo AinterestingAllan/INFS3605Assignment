@@ -310,6 +310,52 @@ public class Warehouse {
                 ,"father","tjak/kaat/maat"));
         db.alphabetDao().insert(new Alphabet("B/P","b and p are interchangeable"
                 ,"-","balyat/palyat"));
+        db.alphabetDao().insert(new Alphabet("D/T","d and t are interchangeable. Also used with j to give a softer version of the 'ch' sound"
+                ,"","tjuditj/djuditj"));
+        db.alphabetDao().insert(new Alphabet("E","e is always as in fetch"
+                ,"fetch","dwert/ketj"));
+        db.alphabetDao().insert(new Alphabet("G","g and k are interchangeable"
+                ,"-","yonga/yonka"));
+        db.alphabetDao().insert(new Alphabet("I","i is always as in fatigue"
+                ,"fatigue","nirnam/mirl"));
+        db.alphabetDao().insert(new Alphabet("J","j has a softer sound than the English version, as in joint, more linke the j in banjo"
+                ,"banjo","djak"));
+        db.alphabetDao().insert(new Alphabet("K","k and g are interchangeable"
+                ,"-","karda/garda"));
+        db.alphabetDao().insert(new Alphabet("KW(gw)","kw is never qu or cw since c and q do not exist"
+                ,"as in quit or Gwenda","kwabadak/gwabadak"));
+        db.alphabetDao().insert(new Alphabet("N","n is always as in not"
+                ,"not","nunuk/noort"));
+        db.alphabetDao().insert(new Alphabet("NG","ng appears at the beginning of words(unlike in English where it never appears at the beginning) and has the same sound as in ing sound of sing, never as in finger"
+                ,"sing","ganiny/nganjima"));
+        db.alphabetDao().insert(new Alphabet("NY","ny as in canyon, never as in pony cr nyal"
+                ,"canyon","yingarn/nyitang"));
+        db.alphabetDao().insert(new Alphabet("O","always o as in pop"
+                ,"pop","ngot"));
+        db.alphabetDao().insert(new Alphabet("OO","always oo, as in book. Also interchangeable with u, depending on the word"
+                ,"book","noonook/nunuk"));
+        db.alphabetDao().insert(new Alphabet("P/B","p and b are interchangeable"
+                ,"-","palyat/balyat"));
+        db.alphabetDao().insert(new Alphabet("R","r is always as in rake. It does not, however, appear at the beginning of words"
+                ,"rake","kara/maar"));
+        db.alphabetDao().insert(new Alphabet("RD","pronounced with an accent on the r, as in American accents, never with the preceding consonant or vowel"
+                ,"hard","karda/noort"));
+        db.alphabetDao().insert(new Alphabet("RL","pronounced with an accent on the r, as in American accents, never with the preceding consonant or vowel"
+                ,"burley","karla/marlak"));
+        db.alphabetDao().insert(new Alphabet("RN","pronounced with an accent on the r, as in American accents, never with the preceding consonant or vowel"
+                ,"born","boorn/nyingarn"));
+        db.alphabetDao().insert(new Alphabet("RR","slightly trilled, as in a Scottish accent"
+                ,"sporran","warrkaly"));
+        db.alphabetDao().insert(new Alphabet("RT","pronounced with an accent on the r, as in American accents, never with the preceding consonant or vowel"
+                ,"start","koort/dwert"));
+        db.alphabetDao().insert(new Alphabet("T/D","t and d are interchangeable. Also used with j to give a softer version of the 'ch' sound"
+                ,"-","tjuditj/djuditj"));
+        db.alphabetDao().insert(new Alphabet("U","u is always as in put. Also interchangeable with oo, depending on the word"
+                ,"put","Nyungar/Noongar"));
+        db.alphabetDao().insert(new Alphabet("W","w is always as in water"
+                ,"water","wetj/wirlo"));
+        db.alphabetDao().insert(new Alphabet("Y","y is always as in yellow"
+                ,"yellow","yooran/yandjet"));
     }
 
     public static void setWordsToWordGroups(ArrayList<WordGroup> wordsToWordGroups) {

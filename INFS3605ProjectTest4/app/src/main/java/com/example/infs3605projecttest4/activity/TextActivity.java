@@ -54,7 +54,6 @@ public class TextActivity extends AppCompatActivity {
         text_word = findViewById(R.id.text_word);
 
         currType = ImportantData.getCurrExeType();
-
         currList = currType.getWordList();
 
         int currSize = 0;
@@ -66,7 +65,6 @@ public class TextActivity extends AppCompatActivity {
             currSize = currType.getWordList().size();
         }
 
-
         rbList = new ArrayList<>();
         rbList.add(text1);
         rbList.add(text2);
@@ -75,7 +73,7 @@ public class TextActivity extends AppCompatActivity {
 
         setRadioButton(rbList);
 
-        if (currList.size()<4) {
+        if (currSize<4) {
             Toast.makeText(this, "Sorry, We don't have enough vocabulary on this category now", Toast.LENGTH_SHORT).show();
         } else {
             setWord();

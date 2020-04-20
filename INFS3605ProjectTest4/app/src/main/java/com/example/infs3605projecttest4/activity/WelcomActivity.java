@@ -3,6 +3,7 @@ package com.example.infs3605projecttest4.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,6 +51,9 @@ public class WelcomActivity extends AppCompatActivity {
         //create the database connection
         Warehouse.startDatabase(this);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("databaseCreate",MODE_PRIVATE);
+
+
 
        // insert the alphabets into database
        // Warehouse.insertAllDataIntoDatabase();
@@ -57,7 +61,7 @@ public class WelcomActivity extends AppCompatActivity {
 
 
         // get data from database
-        Warehouse.setAllData();
+        Warehouse.setAllData(sharedPreferences);
 
 
 

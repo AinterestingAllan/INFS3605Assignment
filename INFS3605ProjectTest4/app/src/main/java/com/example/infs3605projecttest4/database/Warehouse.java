@@ -1,6 +1,7 @@
 package com.example.infs3605projecttest4.database;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import androidx.room.Room;
 
@@ -27,20 +28,23 @@ public class Warehouse {
     }
 
 
-    public static void setAllData() {
+    public static void setAllData(final SharedPreferences sharedPreferences) {
         new Thread() {
             @Override
             public void run() {
-//                // insert the alphabets into database
-//                insertAllAlphabets();
-//
-//                // insert all words to database
-//                insertAllWords();
-//
-//                // insert the wordgroups into database
-//                db.wordGroupDao().insertWordGroup(new WordGroup(900,901,"family"));
-//                db.wordGroupDao().insertWordGroup(new WordGroup(902,903,"family"));
-//                db.wordGroupDao().insertWordGroup(new WordGroup(904,905,"family"));
+                if (sharedPreferences.getInt("dbifcreated",0)==0) {
+                    // insert the alphabets into database
+                    insertAllAlphabets();
+
+                    // insert all words to database
+                    insertAllWords();
+
+                    // insert the wordgroups into database
+                    db.wordGroupDao().insertWordGroup(new WordGroup(900,901,"family"));
+                    db.wordGroupDao().insertWordGroup(new WordGroup(902,903,"family"));
+                    db.wordGroupDao().insertWordGroup(new WordGroup(904,905,"family"));
+                    sharedPreferences.edit().putInt("dbifcreated",1).apply();
+                }
 
                 alphabetArrayList = (ArrayList<Alphabet>) db.alphabetDao().getAlphabets();
 

@@ -31,10 +31,7 @@ public class Warehouse {
             @Override
             public void run() {
                 // insert the alphabets into database
-                db.alphabetDao().insert(new Alphabet("A","a is always as in father\naa as in Kaat"
-                        ,"father","tjak/kaat/maat"));
-                db.alphabetDao().insert(new Alphabet("B/P","b and p are interchangeable"
-                        ,"-","balyat/palyat"));
+                insertAllAlphabets();
 
                 // insert the words into database
                 insertAllWords();
@@ -317,6 +314,13 @@ public class Warehouse {
         db.wordDao().insertWord(new Word(171,"We", 0,"Ngalak","Other"));
         db.wordDao().insertWord(new Word(172,"Our", 0,"Ngalang","Other"));
 
+    }
+
+    public static void insertAllAlphabets() {
+        db.alphabetDao().insert(new Alphabet("A","a is always as in father\naa as in Kaat"
+                ,"father","tjak/kaat/maat"));
+        db.alphabetDao().insert(new Alphabet("B/P","b and p are interchangeable"
+                ,"-","balyat/palyat"));
     }
 
     public static void setWordsToWordGroups(ArrayList<WordGroup> wordsToWordGroups) {

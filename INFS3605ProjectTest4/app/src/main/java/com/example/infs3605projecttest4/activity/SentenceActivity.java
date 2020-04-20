@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.infs3605projecttest4.CustomToast;
 import com.example.infs3605projecttest4.database.ImportantData;
@@ -36,6 +37,8 @@ public class SentenceActivity extends AppCompatActivity {
     public static SentenceAdapter seAd1;
     public static SentenceAdapter seAd2;
     private CustomToast toast;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,30 +52,33 @@ public class SentenceActivity extends AppCompatActivity {
 
         // get currType
         currType = ImportantData.getCurrExeType();
+        if (currType.getSentences().size() > 0) {
+            setExe();
 
-        setExe();
+            // set the submitbt
+            se_submitbt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (SentenceAdapter.selectWordAy.toString().equals(currSentence.getWordsList().toString())) {
+                        toastMessage("correct" + " 😊");
+                        //Toast.makeText(SentenceActivity.this, "Correct!", Toast.LENGTH_SHORT).show();
+                        if (currIndex < currType.getSentences().size() - 1) {
+                            currIndex++;
+                            setExe();
+                        } else {
+                            toastMessage("you have finished" + " 😃");
+                            //Toast.makeText(SentenceActivity.this, "You have finished!", Toast.LENGTH_SHORT).show();
+                        }
 
-        // set the submitbt
-        se_submitbt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(SentenceAdapter.selectWordAy.toString().equals(currSentence.getWordsList().toString())) {
-                    toastMessage("correct"+" 😊");
-                    //Toast.makeText(SentenceActivity.this, "Correct!", Toast.LENGTH_SHORT).show();
-                    if (currIndex < currType.getSentences().size()-1) {
-                        currIndex++;
-                        setExe();
                     } else {
-                        toastMessage("you have finished"+" 😃");
-                        //Toast.makeText(SentenceActivity.this, "You have finished!", Toast.LENGTH_SHORT).show();
+                        toastMessage("false" + " 🙁");
+                        //Toast.makeText(SentenceActivity.this, "False :(", Toast.LENGTH_SHORT).show();
                     }
-
-                } else {
-                    toastMessage("false"+" 🙁");
-                    //Toast.makeText(SentenceActivity.this, "False :(", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
+            });
+        } else {
+            Toast.makeText(this, "There is not enough sentences to practice!", Toast.LENGTH_SHORT).show();
+        }
 
     }
 

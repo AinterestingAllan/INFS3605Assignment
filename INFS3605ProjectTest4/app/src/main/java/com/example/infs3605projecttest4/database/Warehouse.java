@@ -156,7 +156,7 @@ public class Warehouse {
         db.wordDao().insertWord(new Word(17,"Gecko", R.drawable.gecko,"Bidjul","animal"));
         db.wordDao().insertWord(new Word(18,"Red Kangaroo", R.drawable.red_kangaroo,"Bigurida","animal"));
         db.wordDao().insertWord(new Word(27,"Lizard", R.drawable.lizard,"Bungarrah","animal"));
-        db.wordDao().insertWord(new Word(38,"Birds", R.drawable.bird,"Djert","animal"));
+        db.wordDao().insertWord(new Word(38,"Bird", R.drawable.bird,"Djert","animal"));
         db.wordDao().insertWord(new Word(39,"Grasshoper", R.drawable.grasshopper,"Djidaarly","animal"));
         db.wordDao().insertWord(new Word(40,"Fish", R.drawable.fish,"Djildjit","animal"));
         db.wordDao().insertWord(new Word(47,"Snake", R.drawable.snake,"Dugatch","animal"));

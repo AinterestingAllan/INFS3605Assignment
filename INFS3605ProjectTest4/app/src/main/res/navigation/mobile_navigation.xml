@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.infs3605projecttest4.ui.notifications.NotificationsFragment"
+        android:name="com.example.infs3605projecttest4.ui.search.SearchFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_search" />
 </navigation>

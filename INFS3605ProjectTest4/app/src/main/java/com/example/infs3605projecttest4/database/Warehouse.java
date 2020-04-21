@@ -20,6 +20,7 @@ public class Warehouse {
     private static Database db = null;
     private static ArrayList<Alphabet> alphabetArrayList = null;
     private static ArrayList<Word> wordsByCurrType = null;
+    private static Word serWord = null;
     private static Map<String, TestType> typesMap = new HashMap<>();
 
     public static void startDatabase(final Context context) {
@@ -121,6 +122,15 @@ public class Warehouse {
 
     public static Map<String, TestType> getTypesMap() {
         return typesMap;
+    }
+
+    public static Word searchWordByEnglish(final String english) {
+        new Thread() {
+            public void run() {
+                serWord = db.wordDao().getWordsByEnglish(english);
+            }
+        }.start();
+        return serWord;
     }
 
     public static void insertAllWords() {

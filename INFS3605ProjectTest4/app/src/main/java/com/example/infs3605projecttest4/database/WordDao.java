@@ -21,4 +21,7 @@ public interface WordDao {
 
     @Query("Select * From word Where id = :id")
     Word getWordsById(int id);
+
+    @Query("Select * From word Where lower(english) = :english")
+    Word getWordsByEnglish(String english);
 }

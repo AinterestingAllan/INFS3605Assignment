@@ -64,13 +64,10 @@ public class SelectActivity extends AppCompatActivity {
                 goActivity(PairsActivity.class);
             }
         });
-
     }
 
     private void goActivity(Class x) {
         Intent intent = new Intent(this,x);
         startActivity(intent);
     }
-
-
 }

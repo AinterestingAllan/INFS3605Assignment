@@ -270,7 +270,7 @@ public class Warehouse {
         db.wordDao().insertWord(new Word(120,"Listen", R.drawable.listen,"Ni","verb"));
         db.wordDao().insertWord(new Word(132,"Talk", R.drawable.talk,"Waangkiny","verb"));
         db.wordDao().insertWord(new Word(133,"Play", R.drawable.play,"Wabiny","verb"));
-        db.wordDao().insertWord(new Word(999,"Doing", 0,"Warrdint","verb"));
+        db.wordDao().insertWord(new Word(999,"Doing", R.drawable.doing,"Warrdint","verb"));
         db.wordDao().insertWord(new Word(162,"Wait", R.drawable.wait,"Kwidi","verb"));
         db.wordDao().insertWord(new Word(175,"Sit", R.drawable.sit,"Nyin","verb"));
         db.wordDao().insertWord(new Word(13,"Summer", R.drawable.summer,"Beeruk","weather"));
@@ -299,13 +299,13 @@ public class Warehouse {
         db.wordDao().insertWord(new Word(109,"I/Me", R.drawable.i,"Ngany","other"));
         db.wordDao().insertWord(new Word(110,"Who", R.drawable.who,"Ngeean","other"));
         db.wordDao().insertWord(new Word(122,"Here", R.drawable.here,"Nitcha","other"));
-        db.wordDao().insertWord(new Word(121,"This", 0,"Ngeean","other"));
+        db.wordDao().insertWord(new Word(121,"This", R.drawable.this_,"Ngeean","other"));
         db.wordDao().insertWord(new Word(125,"You", R.drawable.you,"Noonuk","other"));
         db.wordDao().insertWord(new Word(128,"What", R.drawable.what,"Nygar","other"));
         db.wordDao().insertWord(new Word(142,"Where", R.drawable.where,"Winjar","other"));
         db.wordDao().insertWord(new Word(149,"Tomorrow", R.drawable.tomorrow,"Benang","other"));
-        db.wordDao().insertWord(new Word(171,"We", 0,"Ngalak","other"));
-        db.wordDao().insertWord(new Word(172,"Our", 0,"Ngalang","other"));
+        db.wordDao().insertWord(new Word(171,"We", R.drawable.we,"Ngalak","other"));
+        db.wordDao().insertWord(new Word(172,"Our", R.drawable.our,"Ngalang","other"));
 
     }
 

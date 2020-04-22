@@ -14,6 +14,7 @@ import com.example.infs3605projecttest4.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Warehouse {
@@ -21,6 +22,7 @@ public class Warehouse {
     private static ArrayList<Alphabet> alphabetArrayList = null;
     private static ArrayList<Word> wordsByCurrType = null;
     private static Word serWord = null;
+    private static List<Word> serWordList = null;
     private static Map<String, TestType> typesMap = new HashMap<>();
 
     public static void startDatabase(final Context context) {
@@ -108,6 +110,14 @@ public class Warehouse {
         return wordsByCurrType;
     }
 
+    public static void setSerWord(Word serWord) {
+        Warehouse.serWord = serWord;
+    }
+
+    public static Word getSerWord() {
+        return serWord;
+    }
+
     public static Database getDb() {
         return db;
     }
@@ -124,13 +134,13 @@ public class Warehouse {
         return typesMap;
     }
 
-    public static Word searchWordByEnglish(final String english) {
+    public static List<Word> searchAllWords() {
         new Thread() {
             public void run() {
-                serWord = db.wordDao().getWordsByEnglish(english);
+                serWordList = db.wordDao().getWords();
             }
         }.start();
-        return serWord;
+        return serWordList;
     }
 
     public static void insertAllWords() {

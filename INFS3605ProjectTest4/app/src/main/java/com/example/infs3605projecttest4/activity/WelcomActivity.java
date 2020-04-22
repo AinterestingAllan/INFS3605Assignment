@@ -53,17 +53,9 @@ public class WelcomActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("databaseCreate",MODE_PRIVATE);
 
-
-
-       // insert the alphabets into database
-       // Warehouse.insertAllDataIntoDatabase();
-
-
-
         // get data from database
         Warehouse.setAllData(sharedPreferences);
-
-
-
     }
+
+
 }

@@ -24,4 +24,7 @@ public interface WordDao {
 
     @Query("Select * From word Where lower(english) = :english")
     Word getWordsByEnglish(String english);
+
+    @Query("Select * From word Where lower(english) like :like")
+    List<Word> getWordsByLike(String like);
 }

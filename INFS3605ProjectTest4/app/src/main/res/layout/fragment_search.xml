@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightGreen"
+    android:background="@color/appBackground"
     tools:context=".ui.search.SearchFragment">
 
     <Button
         android:id="@+id/ser_serbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginBottom="31dp"
         android:background="@drawable/button_style"
         android:text="@android:string/search_go"
+        app:layout_constraintBottom_toTopOf="@+id/ser_rv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/ser_input"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
         android:id="@+id/ser_input"
@@ -26,29 +26,31 @@
         android:ems="10"
         android:hint="Input the searched word"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.474"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/ser_serbt"
+        app:layout_constraintEnd_toStartOf="@+id/ser_serbt"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="14dp"
         android:text="please double click the search button"
         app:layout_constraintBottom_toTopOf="@+id/ser_serbt"
-        app:layout_constraintStart_toStartOf="@+id/ser_input" />
+        app:layout_constraintEnd_toEndOf="@+id/ser_serbt"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ser_rv"
-        android:layout_width="256dp"
-        android:layout_height="492dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="370dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.606"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ser_input" />
+        app:layout_constraintTop_toBottomOf="@+id/ser_serbt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

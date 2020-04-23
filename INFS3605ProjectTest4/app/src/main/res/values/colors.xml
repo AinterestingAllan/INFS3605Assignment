@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="colorPrimary">#FFC107</color>
-    <color name="colorPrimaryDark">#FF9800</color>
-    <color name="colorAccent">#FFEB3B</color>
-    <color name="lightGreen">#75AF4C</color>
-</resources>
+    <resources>
+        <color name="colorPrimary">#FFC107</color>
+        <color name="colorPrimaryDark">#FF9800</color>
+        <color name="colorAccent">#FFEB3B</color>
+        <color name="lightGreen">#ECF8EC</color>
+        <color name="appBackground">#629162</color>
+        <color name="buttonBackground">#B97455</color>
+        <color name="buttonText">#553527</color>
+    </resources>

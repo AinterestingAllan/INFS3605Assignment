@@ -31,6 +31,7 @@ public class TextActivity extends AppCompatActivity {
     RadioButton text3;
     RadioButton text4;
     TextView text_word;
+    TextView text_status;
     int index=0;
     Word currWord;
     TestType currType = null;
@@ -40,6 +41,7 @@ public class TextActivity extends AppCompatActivity {
     RadioButton curr = null;
     ArrayList<RadioButton> rbList;
     private CustomToast toast;
+    private int currSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +54,12 @@ public class TextActivity extends AppCompatActivity {
         text3 = findViewById(R.id.text_rb3);
         text4 = findViewById(R.id.text_rb4);
         text_word = findViewById(R.id.text_word);
+        text_status = findViewById(R.id.text_status);
 
         currType = ImportantData.getCurrExeType();
         currList = currType.getWordList();
 
-        int currSize = 0;
+        currSize = 0;
         // if user use the missing word function
         if ("group".equals(TAG)) {
             currGroup = currType.getWordGroupList();
@@ -132,6 +135,7 @@ public class TextActivity extends AppCompatActivity {
             currWord = currGroup.get(index).getWord2();
             text_word.setText("Fill the missing word \n \n     "+currGroup.get(index).getWord1().getLocal()+"  ______");
         }
+        text_status.setText(index+"/"+currSize);
         int r2 = getRandomIndex();
         int r3 = getRandomIndex();
         while (true) {

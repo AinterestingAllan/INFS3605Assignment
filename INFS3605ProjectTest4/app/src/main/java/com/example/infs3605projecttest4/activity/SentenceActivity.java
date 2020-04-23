@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ public class SentenceActivity extends AppCompatActivity {
 
     private TextView se_typename;
     private TextView se_wordname;
+    private TextView se_status;
     private RecyclerView se_serv;
     private RecyclerView se_rv_selected;
     private Button se_submitbt;
@@ -49,6 +51,7 @@ public class SentenceActivity extends AppCompatActivity {
         se_serv = findViewById(R.id.se_serv);
         se_rv_selected = findViewById(R.id.se_rv_selected);
         se_submitbt = findViewById(R.id.se_submitbt);
+        se_status = findViewById(R.id.se_status);
 
         // get currType
         currType = ImportantData.getCurrExeType();
@@ -82,10 +85,11 @@ public class SentenceActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private void setExe() {
         // get currSentence and currIndex=0
         currSentence = currType.getSentences().get(currIndex);
-
+        se_status.setText(currIndex+"/"+currType.getSentences().size());
         // set the textview
         se_typename.setText(currType.getName());
         se_wordname.setText("Translate this sentence"+"\n \n    "+currSentence.getEnglish());

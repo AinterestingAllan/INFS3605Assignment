@@ -38,12 +38,15 @@ public class PictionaryActivity extends AppCompatActivity {
     ImageView pc_image3;
     ImageView pc_image4;
     private CustomToast toast;
+    TextView pc_status;
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pictionary);
+        pc_status = findViewById(R.id.pc_status);
+
 
         currType = ImportantData.getCurrExeType();
 
@@ -81,6 +84,7 @@ public class PictionaryActivity extends AppCompatActivity {
         TextView pc_word = findViewById(R.id.pc_word);
         if (currType.getWordList().size() >= 4 ) {
             setWord();
+
             // check answer button
             Button pc_bt = findViewById(R.id.pc_bt);
             // create intent
@@ -162,7 +166,9 @@ public class PictionaryActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private void setWord() {
+        pc_status.setText(currIndex+"/"+currType.getWordList().size());
         // set the word
         TextView pc_word = findViewById(R.id.pc_word);
         currWord = currType.getWordList().get(currIndex);

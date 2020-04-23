@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/noongar"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.PairsActivity"></activity>
+        <activity android:name=".activity.WordDetailActivity"></activity>
+        <activity android:name=".activity.PairsActivity" />
         <activity android:name=".activity.SentenceActivity" />
         <activity android:name=".activity.TextActivity" />
         <activity android:name=".activity.SelectActivity" />
